@@ -21,7 +21,7 @@ def getZ(number):
     elif number == 3:
      Z = sheet.col_values(15,415,616)
     else:
-     print ("El numero introducido es incorrecto")
+     print ("El numero introducido es incorrecto!")
 
     return Z
          
@@ -36,7 +36,7 @@ def getPh(number):
     elif number == 3:
      Ph = sheet.col_values(16,415,616)
     else:
-     print ("El numero introducido es incorrecto")
+     print ("El numero introducido es incorrecto!")
         
     return Ph 
 
@@ -49,7 +49,7 @@ def getZ1(number):
     elif number == 3:
      Z1 = sheet.col_values(17,415,616)
     else:
-        print ("El numero introducido es incorrecto")
+        print ("El numero introducido es incorrecto!")
         
     return Z1
 
@@ -62,7 +62,7 @@ def getZ2(number):
     elif number == 3:
      Z2 = sheet.col_values(18,415,616)
     else:
-        print ("El numero introducido es incorrecto")
+        print ("El numero introducido es incorrecto!")
         
     return Z2 
 
@@ -76,7 +76,7 @@ def getF(number):
     elif number == 3:
      f = sheet.col_values(14,415,616)
     else:
-        print ("El numero introducido es incorrecto")
+        print ("El numero introducido es incorrecto!")
         
     return f 
 
@@ -90,7 +90,7 @@ def getC(number):
     elif number == 3:
      C = sheet.col_values(19,415,616)
     else:
-        print ("El numero introducido es incorrecto")
+        print ("El numero introducido es incorrecto!")
         
     return C 
    
