@@ -3,8 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from peines import getF, getC, getPh, getZ, getZ1, getZ2
 
-
-
 def ploteo(number):
     f = getF(number) 
     Z = getZ(number) 
