@@ -10,6 +10,7 @@ sheet = openFile.sheet_by_name("59")
 
 #print("Num de filas", sheet.nrows)
 #print("Num de columnas",sheet.ncols)
+#Cuidado con los cambios
 
 def getZ(number):
     if number == 1:
