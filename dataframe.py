@@ -38,7 +38,7 @@ class Nanotech(QMainWindow):
     def buttonClicked(self,e):
         btn_txt = self.sender().text()
         if btn_txt == "Measurements - 10 Hz":
-            ploteo(2)
+            ploteo(1)
         elif btn_txt == "Measurements - 1 Hz":
             ploteo(2)
         elif btn_txt == "Measurements - 0.1 Hz":
