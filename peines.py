@@ -8,9 +8,7 @@ filePath = r'C:\Users\apb19\Documents\PAE Peines.xlsx'
 openFile = xlrd.open_workbook(filePath)
 sheet = openFile.sheet_by_name("59")
 
-#print("Num de filas", sheet.nrows)
-#print("Num de columnas",sheet.ncols)
-#A partir de ahora usaremos GitHub
+# Esta función tiene por objetivo leer los parámetros del excel en función del click del usuario
 
 def getZ(number):
     if number == 1: # Esto es para 10Hz
