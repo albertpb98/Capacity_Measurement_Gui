@@ -10,7 +10,7 @@ sheet = openFile.sheet_by_name("59")
 
 #print("Num de filas", sheet.nrows)
 #print("Num de columnas",sheet.ncols)
-#Cuidado con los cambios
+#Ahora usamos github
 
 def getZ(number):
     if number == 1: # Esto es para 10Hz
