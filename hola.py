@@ -6,8 +6,10 @@ from peines import getF, getC, getPh, getZ, getZ1, getZ2
 
 
 def ploteo(number):
+  
     f = getF(number) 
     Z = getZ(number) 
+
     Ph = getPh(number)
     Z1 = getZ1(number)
     Z2 = getZ2(number)
