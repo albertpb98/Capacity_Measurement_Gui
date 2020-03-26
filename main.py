@@ -76,10 +76,9 @@ class Example(nano):
     def buttonClicked(self,e):
         btn_txt = self.sender().text()
         if btn_txt == "Nanotech":
-            #ploteo()
-            self.NewWindow1 = nano()
-        elif btn_txt == "Impedance Measurements":
             os.system('NOTEPAD.exe')
+        elif btn_txt == "Impedance Measurements":
+            self.NewWindow1 = nano()
         elif btn_txt == "Optic Fiber":
             QMessageBox.information(self,"Welcome","You have clicked on: " + btn_txt)
 
@@ -102,7 +101,8 @@ class Example(nano):
     def paintEvent(self, event):
         qp = QPainter()
         qp.begin(self)
-        self.drawImage(event, qp, r'C:\Users\apb19\Desktop\etsetb.jpg')
+        #self.drawImage(event, qp, r'C:\Users\apb19\Desktop\etsetb.jpg')
+        self.drawImage(event, qp, r'C:\\Users\\alexa\\OneDrive\\Escritorio\\squad')
         self.drawText(event, qp, 'EL PAE CHAVALES')
         qp.end()
 

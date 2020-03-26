@@ -4,7 +4,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import openpyxl
 
-filePath = r'C:\Users\apb19\Documents\PAE Peines.xlsx'
+#filePath = r'C:\Users\apb19\Documents\PAE Peines.xlsx'
+filePath = r'C:\\Users\\alexa\\OneDrive\\Escritorio\\TELECOS\\PAE\\PAE_peines.xlsx'
 openFile = xlrd.open_workbook(filePath)
 sheet = openFile.sheet_by_name("59")
 
