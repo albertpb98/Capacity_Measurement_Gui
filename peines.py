@@ -4,11 +4,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 import openpyxl
 
-filePath = r'C:\Users\apb19\Documents\PAE Peines.xlsx'
+#filePath = r'C:\Users\apb19\Documents\PAE Peines.xlsx'
+filePath = r'C:\\Users\\alexa\\OneDrive\\Escritorio\\TELECOS\\PAE\\PAE_peines.xlsx'
 openFile = xlrd.open_workbook(filePath)
 sheet = openFile.sheet_by_name("59")
 
 # Esta función tiene por objetivo leer los parámetros del excel en función del click del usuario
+
+#This function lets us know the impedance value
 
 def getZ(number):
     if number == 1: # Esto es para 10Hz
@@ -24,6 +27,7 @@ def getZ(number):
 
     return Z
          
+#This function lets us know the phase value
 
 def getPh(number):
     if number == 1: # Esto es para 10Hz
@@ -39,6 +43,8 @@ def getPh(number):
         
     return Ph 
 
+#This function lets us know the real impedance value
+
 def getZ1(number):
     if number == 1: # Esto es para 10Hz
      Z1 = sheet.col_values(4,415,616)
@@ -51,6 +57,8 @@ def getZ1(number):
         print ("El numero introducido es incorrecto!")
         
     return Z1
+
+#This function lets us know the imaginary impedance value
 
 def getZ2(number):
     if number == 1: # Esto es para 10Hz
@@ -65,6 +73,8 @@ def getZ2(number):
         
     return Z2 
 
+#This function lets us know the frecuency value
+
 def getF(number):
     if number == 1: # Esto es para 10Hz
      f = sheet.col_values(1,415,616)
@@ -78,6 +88,8 @@ def getF(number):
         print ("El numero introducido es incorrecto!")
         
     return f 
+
+#This function lets us know the capacity value
 
 def getC(number):
     if number == 1: # Esto es para 10Hz
