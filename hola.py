@@ -2,6 +2,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from peines import getF, getC, getPh, getZ, getZ1, getZ2
+#More imports may be added
 
 def ploteo(number):
   
