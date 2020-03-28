@@ -1,5 +1,4 @@
 
-
 import sys
 import os
 
@@ -11,26 +10,23 @@ from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QMessageBox, QLa
     QVBoxLayout, QTableWidgetItem, QTableWidget    
 
 
-
 class Plotis(QWidget):
     def __init__(self, parent = None):
         super(Plotis,self).__init__(parent)
         #QApplication.setStyle(QStyleFactory.create('0.1 Hz'))
         #QApplication.setStyle()
-        samplesList = ["MM", "M1", "M2"]
+        samplesList = ["MM", "M1", "M2"]    
 
         #Create the QCOMBOBOX
-        cbx = QComboBox()   #Adds items in a list object
-        cbx.addItems(samplesList)   #Answer the text event change
-        item = cbx.currentText()    #Retrieves the text of currently selected item
-
-        #QLISTWIDGET
-        items = ['Z(f)','C(f)', 'Z2(Z1)', 'Ph(f)']
-
+        cbx = QComboBox()                                       #Adds items in a list object
+        cbx.addItems(samplesList)                               #Answer the text event change       
+        sam = cbx.currentText()                                 #Retrieves the text of currently selected item
+        print(cbx.currentIndex())
+        
+        items = self.clikedItem(sam)
         self.lv = QListWidget()
         self.lv.addItems(items)
-        self.lv.itemSelectionChanged.connect(self.itemChanged)
-
+        #self.lv.itemSelectionChanged.connect(self.itemChanged)
         vbx = QVBoxLayout()
         vbx.setAlignment(Qt.AlignTop)
         vbx.addWidget(cbx)
@@ -39,14 +35,15 @@ class Plotis(QWidget):
         self.resize(500, 350)
         self.setWindowTitle('Choose the sample to measure')
         self.setLayout(vbx)
+        self.show()
 
 
-    def clikedItem(self,item):
-        if item == "MM":
-            items = ['Z(f)','C(f)', 'Z2(Z1)', 'Ph(f)']
-        elif item == "M1":
+    def clikedItem(self,sam):
+        if sam == "MM":
+            items = ['Z(xf)','C(f)', 'Z2(Z1)', 'Ph(f)']
+        elif sam == "M1":
             items = ['Z(f)','C(f)', 'Z2(Z1)', 'xD(f)']
-        elif item == "M2":
+        elif sam == "M2":
             items = ['Z(f)','C(f)', 'Z2(Z1)', 'Ph(f)']
         return items
 
@@ -76,8 +73,9 @@ class Plotis(QWidget):
         qp.setFont(QFont('Consolas', 48))
         qp.drawText(event.rect(), Qt.AlignCenter, text)
 
-    def textChanged(self,txt):
-        QApplication.setStyle(QStyleFactory.create(txt))
+    #def textChanged(self,txt):
+        #QApplication.setStyle(QStyleFactory.create(txt))
+        
 
     def itemChanged(self):
         item = QListWidgetItem(self.lv.currentItem())

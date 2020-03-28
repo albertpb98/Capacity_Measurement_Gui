@@ -6,6 +6,7 @@ from PyQt5.QtGui import QPainter, QFont, QColor, QPixmap, QPen, QBrush, QIcon
 from PyQt5.QtCore import Qt, QRect, QPoint
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QMessageBox, QLabel, QLineEdit, QMainWindow, qApp, QAction
 from hola import ploteo
+from plwindow import Plotis as pl
 
 
 class Nanotech(QMainWindow):
@@ -38,7 +39,8 @@ class Nanotech(QMainWindow):
     def buttonClicked(self,e):
         btn_txt = self.sender().text()
         if btn_txt == "Measurements - 10 Hz":
-            ploteo(1)
+            #ploteo(1)
+            self.newWindow1 = pl()
         elif btn_txt == "Measurements - 1 Hz":
             ploteo(2)
         elif btn_txt == "Measurements - 0.1 Hz":
