@@ -101,8 +101,8 @@ class Example(nano):
     def paintEvent(self, event):
         qp = QPainter()
         qp.begin(self)
-        #self.drawImage(event, qp, r'C:\Users\apb19\Desktop\etsetb.jpg')
-        self.drawImage(event, qp, r'C:\\Users\\alexa\\OneDrive\\Escritorio\\squad')
+        self.drawImage(event, qp, r'C:\Users\apb19\Desktop\etsetb.jpg')
+        #self.drawImage(event, qp, r'C:\\Users\\alexa\\OneDrive\\Escritorio\\squad')
         self.drawText(event, qp, 'EL PAE CHAVALES')
         qp.end()
 
