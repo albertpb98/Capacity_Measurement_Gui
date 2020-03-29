@@ -5,7 +5,6 @@ import os
 from PyQt5.QtGui import QPainter, QFont, QColor, QPixmap, QPen, QBrush, QIcon
 from PyQt5.QtCore import Qt, QRect, QPoint
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QMessageBox, QLabel, QLineEdit, QMainWindow, qApp, QAction
-from hola import ploteo
 from dataframe import Nanotech as nano
 
 #class Example(QMainWindow):
