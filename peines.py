@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import openpyxl
 
-#filePath = r'C:\Users\apb19\Documents\PAE Peines.xlsx'
-filePath = r'C:\\Users\\alexa\\OneDrive\\Escritorio\\TELECOS\\PAE\\PAE_peines.xlsx'
+filePath = r'C:\Users\apb19\Documents\PAE Peines.xlsx'
+#filePath = r'C:\\Users\\alexa\\OneDrive\\Escritorio\\TELECOS\\PAE\\PAE_peines.xlsx'
 openFile = xlrd.open_workbook(filePath)
 sheet = openFile.sheet_by_name("59")
 
@@ -16,7 +16,6 @@ sheet = openFile.sheet_by_name("59")
 def getZ(number):
     if number == 1: # Esto es para 10Hz
      Z = sheet.col_values(2,415,616)
-     print(Z)
     elif number == 2: #Esto es para 1 Hz
      Z = sheet.col_values(9,415,616) 
     
