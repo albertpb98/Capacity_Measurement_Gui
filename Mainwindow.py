@@ -6,6 +6,7 @@ class Ui(QtWidgets.QMainWindow):
     def __init__(self):
         super(Ui, self).__init__()
         uic.loadUi(r'GUI UI\mainwindow.ui', self)
+        self.setWindowTitle('Capacity Measurement User Interface')
         
         self.b1 = self.findChild(QtWidgets.QPushButton, 'pushButton')
         self.b1.setCheckable(True)
@@ -70,6 +71,7 @@ class Ui(QtWidgets.QMainWindow):
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
+    app.setWindowIcon(QIcon(r'GUI Images\icoUpc.png'))
     window = Ui()
     app.exec_()
             
