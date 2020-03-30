@@ -5,7 +5,7 @@ from hola import ploteoZF, ploteoPhF, ploteoCF, ploteoZ1Z2
 class Ui(QtWidgets.QMainWindow):
     def __init__(self):
         super(Ui, self).__init__()
-        uic.loadUi(r'C:\Users\apb19\Documents\PAE\GUI UI\Test.ui', self)
+        uic.loadUi(r'GUI UI\Test.ui', self)
         self.show()
         items = ["10Hz", "1Hz", "0.1Hz"]
         self.cbx=self.findChild(QtWidgets.QComboBox, 'comboBox')
