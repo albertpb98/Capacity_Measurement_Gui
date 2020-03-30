@@ -1,11 +1,10 @@
-
 import sys
 import os
 
 from PyQt5.QtGui import QPainter, QFont, QColor, QPixmap, QPen, QBrush, QIcon
 from PyQt5.QtCore import Qt, QRect, QPoint
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QMessageBox, QLabel, QLineEdit, QMainWindow, qApp, QAction
-from hola import ploteo
+from hola import ploteoZF, ploteoPhF, ploteoCF, ploteoZ1Z2
 
 
 class Nanotech(QMainWindow):
@@ -38,11 +37,20 @@ class Nanotech(QMainWindow):
     def buttonClicked(self,e):
         btn_txt = self.sender().text()
         if btn_txt == "Measurements - 10 Hz":
-            ploteo(1)
+            ploteoZF(1)
+            ploteoPhF(1)
+            ploteoZ1Z2(1)
+            ploteoCF(1)
         elif btn_txt == "Measurements - 1 Hz":
-            ploteo(2)
+            ploteoZF(2)
+            ploteoPhF(2)
+            ploteoZ1Z2(2)
+            ploteoCF(2)
         elif btn_txt == "Measurements - 0.1 Hz":
-            ploteo(3)
+            ploteoZF(3)
+            ploteoPhF(3)
+            ploteoZ1Z2(3)
+            ploteoCF(3)
                
 
     def closeEvent(self,event):

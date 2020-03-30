@@ -5,7 +5,6 @@ import os
 from PyQt5.QtGui import QPainter, QFont, QColor, QPixmap, QPen, QBrush, QIcon
 from PyQt5.QtCore import Qt, QRect, QPoint
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QMessageBox, QLabel, QLineEdit, QMainWindow, qApp, QAction
-from hola import ploteo
 from dataframe import Nanotech as nano
 
 #class Example(QMainWindow):
@@ -101,8 +100,8 @@ class Example(nano):
     def paintEvent(self, event):
         qp = QPainter()
         qp.begin(self)
-        #self.drawImage(event, qp, r'C:\Users\apb19\Desktop\etsetb.jpg')
-        self.drawImage(event, qp, r'C:\\Users\\alexa\\OneDrive\\Escritorio\\squad')
+        self.drawImage(event, qp, r'C:\Users\apb19\Desktop\etsetb.jpg')
+        #self.drawImage(event, qp, r'C:\\Users\\alexa\\OneDrive\\Escritorio\\squad')
         self.drawText(event, qp, 'EL PAE CHAVALES')
         qp.end()
 
