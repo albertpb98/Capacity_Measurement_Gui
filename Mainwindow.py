@@ -7,9 +7,8 @@ class Ui(QtWidgets.QMainWindow):
         super(Ui, self).__init__()
         uic.loadUi(r'GUI UI\mainwindow.ui', self)
         self.setWindowTitle('Capacity Measurement User Interface')
-        
         self.b1 = self.findChild(QtWidgets.QPushButton, 'pushButton')
-        self.b1.setCheckable(True)
+        #self.b1.setCheckable(True)
         self.b5 = self.findChild(QtWidgets.QPushButton, 'BtMenu')
         self.b2 = self.findChild(QtWidgets.QPushButton, 'pushButton_2')
         self.b3 = self.findChild(QtWidgets.QPushButton, 'pushButton_3')

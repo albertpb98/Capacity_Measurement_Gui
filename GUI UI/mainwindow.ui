@@ -88,7 +88,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Placeholder 4</string>
+     <string>HOLA POLETE</string>
     </property>
    </widget>
    <widget class="QLabel" name="titulo">
