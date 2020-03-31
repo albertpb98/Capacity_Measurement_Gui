@@ -27,7 +27,7 @@
      <string>Log axis</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="cbx">
+   <widget class="QComboBox" name="cbx_3">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -52,7 +52,7 @@
      </property>
     </item>
    </widget>
-   <widget class="QOpenGLWidget" name="plotWindow">
+   <widget class="QOpenGLWidget" name="myGLWidget">
     <property name="geometry">
      <rect>
       <x>280</x>
@@ -100,7 +100,7 @@
      </property>
     </item>
    </widget>
-   <widget class="QComboBox" name="cbx_3">
+   <widget class="QComboBox" name="cbx">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -136,12 +136,7 @@
     </property>
     <item>
      <property name="text">
-      <string>Z2(Z1)</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Ph(f)</string>
+      <string>Z(f)</string>
      </property>
     </item>
     <item>
@@ -151,7 +146,12 @@
     </item>
     <item>
      <property name="text">
-      <string>Z(f)</string>
+      <string>Z2(Z1)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Ph(f)</string>
      </property>
     </item>
    </widget>

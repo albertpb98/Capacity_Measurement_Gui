@@ -14,6 +14,7 @@ class Ui(QtWidgets.QMainWindow):
         self.list.addItems(["Z(F)", "Ph(f)", "Z1(Z2)", "C(f)"])
         self.cbx.currentIndexChanged.connect(self.liststate)
         self.list.itemDoubleClicked.connect(self.itemSelected)
+
         #self.button = self.findChild(QtWidgets.QPushButton, 'pushButton') Codigo para el boton que no usamos
         #self.button.setCheckable(True)
         #self.button.pressed.connect(self.liststate)
