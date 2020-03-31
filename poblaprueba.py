@@ -5,7 +5,7 @@ from hola import ploteoZF, ploteoPhF, ploteoCF, ploteoZ1Z2
 class Ui(QtWidgets.QMainWindow):
     def __init__(self):
         super(Ui, self).__init__()
-        uic.loadUi(r'C:\Users\apb19\Documents\PAE\GUI UI\Test.ui', self)
+        uic.loadUi(r'GUI UI\Test.ui', self)
         self.show()
         items = ["10Hz", "1Hz", "0.1Hz"]
         self.cbx=self.findChild(QtWidgets.QComboBox, 'comboBox')
@@ -14,6 +14,7 @@ class Ui(QtWidgets.QMainWindow):
         self.list.addItems(["Z(F)", "Ph(f)", "Z1(Z2)", "C(f)"])
         self.cbx.currentIndexChanged.connect(self.liststate)
         self.list.itemDoubleClicked.connect(self.itemSelected)
+
         #self.button = self.findChild(QtWidgets.QPushButton, 'pushButton') Codigo para el boton que no usamos
         #self.button.setCheckable(True)
         #self.button.pressed.connect(self.liststate)
