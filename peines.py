@@ -3,8 +3,7 @@ import xlrd
 import matplotlib.pyplot as plt
 import openpyxl
 
-filePath = r'C:\Users\apb19\Documents\PAE Peines.xlsx'
-# filePath = r'C:\\Users\\alexa\\OneDrive\\Escritorio\\TELECOS\\PAE\\PAE_peines.xlsx'
+filePath = r'DataFiles\PAE peines.xlsx'
 openFile = xlrd.open_workbook(filePath)
 sheet = openFile.sheet_by_name("59")
 
