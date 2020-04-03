@@ -4,74 +4,43 @@ import matplotlib.pyplot as plt
 from peines import getF, getC, getPh, getZ, getZ1, getZ2
 #More imports may be added
 
-def ploteoZF(number):
-    f = getF(number) 
-    Z = getZ(number)
+def ploteoZF(samples, freq, dist):
+    plt.clf()
+    f = getF(samples, freq, dist) 
+    Z = getZ(samples, freq, dist)
+    plt.title('Impedance - Frequency')
     plt.xlabel('Frecuency (Hz)')
     plt.ylabel('Impedance (Ohms)')
     plt.loglog(f,Z, 'r.')
     plt.show() #plt.show() es bloqueante. Hasta que no cierre una no se mostrará la otra gráfica.
 
-def ploteoPhF(number):
-    Ph = getPh(number)
-    f = getF(number)
-    plt.title('Ph(f)')
+def ploteoPhF(samples, freq, dist):
+    plt.clf()
+    Ph = getPh(samples, freq, dist)
+    f = getF(samples, freq, dist)
+    plt.title('Phase - Frequency')
     plt.xlabel('Frequency(Hz)')
     plt.ylabel('Phase (º)')
     plt.plot(f,Ph,'r.')
     plt.show() #plt.show() es bloqueante. Hasta que no cierre una no se mostrará la otra gráfica.
 
-def ploteoZ1Z2(number):
-    Z1 = getZ1(number)
-    Z2 = getZ2(number)
-    plt.title('Z2(Z1)')
+def ploteoZ1Z2(samples, freq, dist):
+    plt.clf()
+    Z1 = getZ1(samples, freq, dist)
+    Z2 = getZ2(samples, freq, dist)
+    plt.title('Module - Phase')
     plt.xlabel('Module (Ohms)')
     plt.ylabel('Fase (º)')
     plt.loglog(Z2,Z1, 'r.')
     plt.show() #plt.show() es bloqueante. Hasta que no cierre una no se mostrará la otra gráfica.
 
-def ploteoCF(number):
-    C = getC(number)
-    f = getF(number)
-    plt.title('C(f)')
+def ploteoCF(samples, freq, dist):
+    plt.clf()
+    C = getC(samples, freq, dist)
+    f = getF(samples, freq, dist)
+    plt.title('Capacity - Frequency')
     plt.xlabel('Frecuency (Hz)')
     plt.ylabel('Capacity (F)')
     plt.plot(f,C, 'r.')
     plt.show() #plt.show() es bloqueante. Hasta que no cierre una no se mostrará la otra gráfica.
-
-#def ploteo(number):
-  
-    #f = getF(number) 
-    #Z = getZ(number) 
-    #Ph = getPh(number)
-    #Z1 = getZ1(number)
-    #Z2 = getZ2(number)
-    #C = getC(number)
-
-    #plt.title('Z(f)')
-    #plt.xlabel('Frecuency (Hz)')
-    #plt.ylabel('Impedance (Ohms)')
-    #plt.loglog(f,Z, 'r.')
-    #plt.figure()
-
-    #plt.title('Ph(f)')
-    #plt.xlabel('Frequency(Hz)')
-    #plt.ylabel('Phase (º)')
-    #plt.plot(f,Ph,'r.')
-    #plt.figure()
-    
-    #plt.title('Z2(Z1)')
-    #plt.xlabel('Module (Ohms)')
-    #plt.ylabel('Fase (º)')
-    #plt.loglog(Z2,Z1, 'r.')
-    #plt.figure()
-    
-    #plt.title('C(f)')
-    #plt.xlabel('Frecuency (Hz)')
-    #plt.ylabel('Capacity (F)')
-    #plt.plot(f,C, 'r.')
-    #plt.show()
-
-
-    
 
