@@ -3,6 +3,7 @@ from PyQt5 import QtWidgets, uic
 from PyQt5.QtGui import QIcon, QPixmap, QPainter
 from hola import ploteoCF, ploteoPhF, ploteoZ1Z2, ploteoZF
 
+#Prueba
 
 class Mes(QtWidgets.QMainWindow):
     def __init__(self):
