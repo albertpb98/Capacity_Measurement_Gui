@@ -17,6 +17,7 @@ class Ui(QtWidgets.QMainWindow):
         self.creditext = self.findChild(QtWidgets.QLabel, 'CreditosTexto')
         self.ccl = self.findChild(QtWidgets.QLabel, 'CCLicense')
         self.etocha = self.findChild(QtWidgets.QLabel, 'EGorda')
+        self.github = self.findChild(QtWidgets.QLabel, 'github')
         self.l1 = self.findChild(QtWidgets.QLabel, 'titulo')
         self.l2 = self.findChild(QtWidgets.QLabel, 'background')
         self.tdist = self.findChild(QtWidgets.QLabel, 'tdist')
@@ -33,6 +34,8 @@ class Ui(QtWidgets.QMainWindow):
         pixmap = QPixmap(r'GUI Images\main gui.png')
         ccimage =QPixmap(r'GUI Images\CC.png')
         egorda = QPixmap(r'GUI Images\seal.png')
+        git = QPixmap(r'GUI Images\githublogo.png')
+        self.github.setPixmap(git)
         self.l2.setPixmap(pixmap)
         self.ccl.setPixmap(ccimage)
         self.etocha.setPixmap(egorda)
@@ -42,6 +45,7 @@ class Ui(QtWidgets.QMainWindow):
         self.b5.hide()
         self.etocha.hide()
         self.creditext.hide()
+        self.github.hide()
         #B1
         self.tfreq.hide()
         self.tsample.hide()
@@ -94,6 +98,7 @@ class Ui(QtWidgets.QMainWindow):
         self.b5.show()
         self.etocha.show()
         self.creditext.show()
+        self.github.show()
         #print("Clicaste el b4")
     def bmclicked(self):
         self.b1.show()
@@ -115,6 +120,7 @@ class Ui(QtWidgets.QMainWindow):
         self.plot.hide()
         self.b1text.hide()
         self.bplot.hide()
+        self.github.hide()
 
     def bplotclicked(self):
         numsamples = self.sample.currentIndex()
