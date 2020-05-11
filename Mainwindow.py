@@ -1,7 +1,7 @@
 import sys
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtGui import QIcon, QPixmap
-from hola import ploteoCF, ploteoPhF, ploteoZ1Z2, ploteoZF
+from Plotter import ploteoCF, ploteoPhF, ploteoZ1Z2, ploteoZF
 
 class Ui(QtWidgets.QMainWindow):
     def __init__(self):

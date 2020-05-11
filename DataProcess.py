@@ -1,7 +1,7 @@
 
 import xlrd
 import matplotlib.pyplot as plt
-import openpyxl
+#import openpyxl
 
 filePath = r'DataFiles\PAE peines.xlsx'
 openFile = xlrd.open_workbook(filePath)
