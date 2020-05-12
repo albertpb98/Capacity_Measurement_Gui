@@ -2,6 +2,7 @@ import sys
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtGui import QIcon, QPixmap
 from Plotter import ploteoCF, ploteoPhF, ploteoZ1Z2, ploteoZF
+from TouchSensor import ComportAvailable
 
 class Ui(QtWidgets.QMainWindow):
     def __init__(self):
@@ -10,6 +11,10 @@ class Ui(QtWidgets.QMainWindow):
         self.setWindowTitle('Capacity Measurement User Interface')
         self.b1 = self.findChild(QtWidgets.QPushButton, 'pushButton')
         #self.b1.setCheckable(True)
+        self.bconnect = self.findChild(QtWidgets.QPushButton, 'pushButton_5')
+        self.COMLabel = self.findChild(QtWidgets.QLabel, 'COMPorts')
+        self.COMBox = self.findChild(QtWidgets.QComboBox, 'COMPortsL')
+        self.list = self.findChild(QtWidgets.QListView, 'ListTouch')
         self.b5 = self.findChild(QtWidgets.QPushButton, 'BtMenu')
         self.b2 = self.findChild(QtWidgets.QPushButton, 'pushButton_2')
         self.b3 = self.findChild(QtWidgets.QPushButton, 'pushButton_3')
@@ -58,6 +63,12 @@ class Ui(QtWidgets.QMainWindow):
         self.b1text.hide()
         self.bplot.hide()
 
+        #B2
+        self.COMBox.hide()
+        self.COMLabel.hide()
+        self.bconnect.hide()
+        self.list.hide()
+
         self.b1.clicked.connect(self.b1clicked)
         self.b2.clicked.connect(self.b2clicked)
         self.b3.clicked.connect(self.b3clicked)
@@ -85,7 +96,19 @@ class Ui(QtWidgets.QMainWindow):
         self.bplot.show()
 
     def b2clicked(self):
-        print("Clicaste el b2")
+        self.b1.hide()
+        self.b2.hide()
+        self.b3.hide()
+        self.b4.hide()
+        self.l1.hide()
+        self.b5.show()
+        self.COMBox.show()
+        self.COMLabel.show()
+        self.bconnect.show()
+        self.list.show()
+        self.COMBox.addItems(ComportAvailable())
+
+
     def b3clicked(self):
         print("Clicaste el b3")
     def b4clicked(self):
@@ -121,6 +144,11 @@ class Ui(QtWidgets.QMainWindow):
         self.b1text.hide()
         self.bplot.hide()
         self.github.hide()
+        self.COMBox.hide()
+        self.COMLabel.hide()
+        self.bconnect.hide()
+        self.list.hide()
+
 
     def bplotclicked(self):
         numsamples = self.sample.currentIndex()
