@@ -1,7 +1,8 @@
 import sys
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtGui import QIcon, QPixmap
-from hola import ploteoCF, ploteoPhF, ploteoZ1Z2, ploteoZF
+from Plotter import ploteoCF, ploteoPhF, ploteoZ1Z2, ploteoZF
+from TouchSensor import ComportAvailable
 
 class Ui(QtWidgets.QMainWindow):
     def __init__(self):
@@ -10,6 +11,10 @@ class Ui(QtWidgets.QMainWindow):
         self.setWindowTitle('Capacity Measurement User Interface')
         self.b1 = self.findChild(QtWidgets.QPushButton, 'pushButton')
         #self.b1.setCheckable(True)
+        self.bconnect = self.findChild(QtWidgets.QPushButton, 'pushButton_5')
+        self.COMLabel = self.findChild(QtWidgets.QLabel, 'COMPorts')
+        self.COMBox = self.findChild(QtWidgets.QComboBox, 'COMPortsL')
+        self.list = self.findChild(QtWidgets.QListView, 'ListTouch')
         self.b5 = self.findChild(QtWidgets.QPushButton, 'BtMenu')
         self.b2 = self.findChild(QtWidgets.QPushButton, 'pushButton_2')
         self.b3 = self.findChild(QtWidgets.QPushButton, 'pushButton_3')
@@ -17,6 +22,7 @@ class Ui(QtWidgets.QMainWindow):
         self.creditext = self.findChild(QtWidgets.QLabel, 'CreditosTexto')
         self.ccl = self.findChild(QtWidgets.QLabel, 'CCLicense')
         self.etocha = self.findChild(QtWidgets.QLabel, 'EGorda')
+        self.github = self.findChild(QtWidgets.QLabel, 'github')
         self.l1 = self.findChild(QtWidgets.QLabel, 'titulo')
         self.l2 = self.findChild(QtWidgets.QLabel, 'background')
         self.tdist = self.findChild(QtWidgets.QLabel, 'tdist')
@@ -33,6 +39,8 @@ class Ui(QtWidgets.QMainWindow):
         pixmap = QPixmap(r'GUI Images\main gui.png')
         ccimage =QPixmap(r'GUI Images\CC.png')
         egorda = QPixmap(r'GUI Images\seal.png')
+        git = QPixmap(r'GUI Images\githublogo.png')
+        self.github.setPixmap(git)
         self.l2.setPixmap(pixmap)
         self.ccl.setPixmap(ccimage)
         self.etocha.setPixmap(egorda)
@@ -42,6 +50,7 @@ class Ui(QtWidgets.QMainWindow):
         self.b5.hide()
         self.etocha.hide()
         self.creditext.hide()
+        self.github.hide()
         #B1
         self.tfreq.hide()
         self.tsample.hide()
@@ -53,6 +62,12 @@ class Ui(QtWidgets.QMainWindow):
         self.plot.hide()
         self.b1text.hide()
         self.bplot.hide()
+
+        #B2
+        self.COMBox.hide()
+        self.COMLabel.hide()
+        self.bconnect.hide()
+        self.list.hide()
 
         self.b1.clicked.connect(self.b1clicked)
         self.b2.clicked.connect(self.b2clicked)
@@ -81,7 +96,19 @@ class Ui(QtWidgets.QMainWindow):
         self.bplot.show()
 
     def b2clicked(self):
-        print("Clicaste el b2")
+        self.b1.hide()
+        self.b2.hide()
+        self.b3.hide()
+        self.b4.hide()
+        self.l1.hide()
+        self.b5.show()
+        self.COMBox.show()
+        self.COMLabel.show()
+        self.bconnect.show()
+        self.list.show()
+        self.COMBox.addItems(ComportAvailable())
+
+
     def b3clicked(self):
         print("Clicaste el b3")
     def b4clicked(self):
@@ -94,6 +121,7 @@ class Ui(QtWidgets.QMainWindow):
         self.b5.show()
         self.etocha.show()
         self.creditext.show()
+        self.github.show()
         #print("Clicaste el b4")
     def bmclicked(self):
         self.b1.show()
@@ -115,6 +143,12 @@ class Ui(QtWidgets.QMainWindow):
         self.plot.hide()
         self.b1text.hide()
         self.bplot.hide()
+        self.github.hide()
+        self.COMBox.hide()
+        self.COMLabel.hide()
+        self.bconnect.hide()
+        self.list.hide()
+
 
     def bplotclicked(self):
         numsamples = self.sample.currentIndex()
