@@ -1,8 +1,11 @@
 import sys
+import time
+import serial
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtGui import QIcon, QPixmap
+from PyQt5.QtCore import QCoreApplication
 from Plotter import ploteoCF, ploteoPhF, ploteoZ1Z2, ploteoZF
-from TouchSensor import ComportAvailable
+from TouchSensor import ComportAvailable, ESP32Connect, ESP32Read
 
 class Ui(QtWidgets.QMainWindow):
     def __init__(self):
@@ -14,7 +17,7 @@ class Ui(QtWidgets.QMainWindow):
         self.bconnect = self.findChild(QtWidgets.QPushButton, 'pushButton_5')
         self.COMLabel = self.findChild(QtWidgets.QLabel, 'COMPorts')
         self.COMBox = self.findChild(QtWidgets.QComboBox, 'COMPortsL')
-        self.list = self.findChild(QtWidgets.QListView, 'ListTouch')
+        self.list = self.findChild(QtWidgets.QListWidget, 'listWidget')
         self.b5 = self.findChild(QtWidgets.QPushButton, 'BtMenu')
         self.b2 = self.findChild(QtWidgets.QPushButton, 'pushButton_2')
         self.b3 = self.findChild(QtWidgets.QPushButton, 'pushButton_3')
@@ -75,6 +78,7 @@ class Ui(QtWidgets.QMainWindow):
         self.b4.clicked.connect(self.b4clicked)
         self.b5.clicked.connect(self.bmclicked)
         self.bplot.clicked.connect(self.bplotclicked)
+        self.bconnect.clicked.connect(self.bconnectclicked)
         self.show()
 
     def b1clicked(self):
@@ -148,7 +152,17 @@ class Ui(QtWidgets.QMainWindow):
         self.COMLabel.hide()
         self.bconnect.hide()
         self.list.hide()
-
+    
+    def bconnectclicked(self):
+        arduino = ESP32Connect(self.COMBox.currentText(), 115200)
+        for i in range(50):
+            item = ESP32Read(arduino)
+            self.list.addItem(item)
+            QCoreApplication.processEvents()
+            #time.sleep(1)
+            
+                
+           
 
     def bplotclicked(self):
         numsamples = self.sample.currentIndex()
