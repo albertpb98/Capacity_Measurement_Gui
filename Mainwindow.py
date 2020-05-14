@@ -154,10 +154,13 @@ class Ui(QtWidgets.QMainWindow):
         self.list.hide()
     
     def bconnectclicked(self):
+        self.list.clear()
+        
         arduino = ESP32Connect(self.COMBox.currentText(), 115200)
-        for i in range(50):
+        for i in range(100):
             item = ESP32Read(arduino)
             self.list.addItem(item)
+            self.list.scrollToBottom()
             QCoreApplication.processEvents()
             #time.sleep(1)
             
