@@ -75,7 +75,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Placeholder 3</string>
+     <string>AD7746 Capacity Sensor</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_4">

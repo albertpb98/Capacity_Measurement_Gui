@@ -1,6 +1,7 @@
 import sys
 import time
 import serial
+import subprocess
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtGui import QIcon, QPixmap
 from PyQt5.QtCore import QCoreApplication
@@ -114,7 +115,9 @@ class Ui(QtWidgets.QMainWindow):
 
 
     def b3clicked(self):
-        print("Clicaste el b3")
+        exePath = r"DataFiles\exe.m"
+        subprocess.Popen(exePath, shell=True)
+
     def b4clicked(self):
         self.b1.hide()
         self.b2.hide()
