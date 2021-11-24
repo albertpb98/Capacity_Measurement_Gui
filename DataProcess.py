@@ -3,7 +3,7 @@ import xlrd
 import matplotlib.pyplot as plt
 #import openpyxl
 
-filePath = r'DataFiles\PAE peines.xlsx'
+filePath = r"/run/media/albertp/2bbddffc-d3c3-4fb0-b4e1-2fdf7d5093eb/Capacity_Measurement_Gui/DataFiles/PAE peines.xlsx"
 openFile = xlrd.open_workbook(filePath)
 sheet = openFile.sheet_by_name("59")
 
